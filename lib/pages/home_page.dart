@@ -12,27 +12,39 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Stack(
-          children: [
-            Container(
-              color: Colors.white,
-              height: 50,
-              width: double.infinity,
-            ),
-            Positioned(
-              top: 10,
-              left: 10,
-              child: Text('Welcome Pizza Co. Ltd')
-            ),
-            Positioned(
-              top: 1,
-              right: 10,
-              child: IconButton(
-                onPressed: () {}, 
-                icon: Icon(Icons.notifications)
-              )
-            )
-          ],
+        title: SizedBox(
+          height: 50, // Give height to avoid layout error
+          child: Stack(
+            children: [
+              Container(
+                color: Colors.white,
+                height: 50,
+                width: double.infinity,
+              ),
+              Positioned(
+                top: 10,
+                left: 10,
+                child: Text('Welcome Pizza Co. Ltd'),
+              ),
+              Positioned(
+                top: 3,
+                right: 10,
+                child: Container(
+                  height: 40,
+                  width: 40,
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(100),
+                    color: Colors.grey.shade200
+                  ),
+                  child: Image.asset(
+                    'assets/images/noti.png',
+                    cacheHeight: 45,
+                    cacheWidth: 45,
+                  )
+                ),
+              ),
+            ],
+          ),
         ),
       ),
       body: Container(
@@ -40,14 +52,26 @@ class _HomePageState extends State<HomePage> {
         padding: EdgeInsets.fromLTRB(30, 20, 30, 20),
         child: Column(
           children: [
-            Container(
-              width: double.infinity,
-              padding: EdgeInsets.only(left: 220,top: 5,bottom: 5),
-              child: Text('1 USD : 2,100 MMK'),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Text(''),
+                Row(
+                  children: [
+                    Image.asset('assets/images/US.png'),
+                    Text('1 USD : 2,100 MMK'),
+                    Image.asset('assets/images/MM.png'),
+                  ],
+                ),
+                
+              ],
             ),
             SizedBox(height: 5,),
             Container(
-              color: Colors.grey.shade100,
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(15),
+                color: Colors.grey.shade200
+              ),
               width: double.infinity,
               height: 130,
               child: Stack(
@@ -66,27 +90,43 @@ class _HomePageState extends State<HomePage> {
                   Positioned(
                     top: 65,
                     left: 25,
-                    child: Icon(
-                      Icons.wallet_outlined,
+                    child: Container(
+                      height: 30,
+                      width: 30,
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(100),
+                        color: const Color.fromARGB(255, 102, 103, 170),
+                      ),
+                      child: Image.asset(
+                        'assets/images/wallet1.png',
+                        cacheHeight: 25,
+                        cacheWidth: 25,
+                      )
                     )
                   ),
                   Positioned(
                     top: 65,
-                    left: 50,
+                    left: 60,
                     child: Text(
                       'My balance (Ks)',
                       style: TextStyle(
+                        fontWeight: FontWeight.w400,
                         fontSize: 16,
-                        color: Colors.grey.shade700
+                        color: const Color.fromARGB(96, 96, 96, 1),
                       ),
                     )
                   ),
                   Positioned(
                     top: 25,
                     right: 25,
-                    child: IconButton(
-                      onPressed: () {}, 
-                      icon: Icon(Icons.qr_code_scanner),
+                    child: Container(
+                      height: 30,
+                      width: 30,
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(100),
+                        color: Colors.grey.shade400,
+                      ),
+                      child: Image.asset('assets/images/qr2.png')
                     )
                   ),
                 ],
@@ -97,32 +137,66 @@ class _HomePageState extends State<HomePage> {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                IconButton(
-                  onPressed: () {}, 
-                  icon: Icon(Icons.keyboard_double_arrow_right_rounded),
+                Column(
+                  spacing: 10,
+                  children: [
+                    Container(
+                      height: 52,
+                      width: 52,
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(100),
+                        color: const Color.fromARGB(255, 102, 103, 170),
+                      ),
+                      child: Image.asset('assets/images/transfer1.png')
+                    ),
+                    Text('Transfer')
+                  ],
                 ),
-                IconButton(
-                  onPressed: () {}, 
-                  icon: Icon(Icons.bookmarks_rounded),
+                Column(
+                  spacing: 10,
+                  children: [
+                    Container(
+                      height: 52,
+                      width: 52,
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(100),
+                        color: const Color.fromARGB(255, 102, 103, 170),
+                      ),
+                      child: Image.asset('assets/images/interBank.png')
+                    ),
+                    Text('Interbank\nTransfer')
+                  ],
                 ),
-                IconButton(
-                  onPressed: () {}, 
-                  icon: Icon(Icons.filter_none_outlined),
+                Column(
+                  spacing: 10,
+                  children: [
+                    Container(
+                      height: 52,
+                      width: 52,
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(100),
+                        color: const Color.fromARGB(255, 102, 103, 170),
+                      ),
+                      child: Image.asset('assets/images/fund1.png')
+                    ),
+                    Text('Fund In/\nOut')
+                  ],
                 ),
-                IconButton(
-                  onPressed: () {}, 
-                  icon: Icon(Icons.view_comfortable_rounded),
+                Column(
+                  spacing: 10,
+                  children: [
+                    Container(
+                      height: 52,
+                      width: 52,
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(100),
+                        color: const Color.fromARGB(255, 102, 103, 170),
+                      ),
+                      child: Image.asset('assets/images/more.png')
+                    ),
+                    Text('More')
+                  ],
                 ),
-              ],
-            ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Text('Transfer'),
-                Text('Interbank\nTransfer'),
-                Text('Fund In\nOut'),
-                Text('More'),
               ],
             ),
             SizedBox(height: 20,),

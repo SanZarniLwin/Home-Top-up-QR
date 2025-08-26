@@ -50,10 +50,10 @@ class _MyHomePageState extends State<MyHomePage> {
       body: IndexedStack(index: _selectedIndex, children: _pages),
       bottomNavigationBar: NavigationBar(
         destinations: [
-          NavigationDestination(icon: Icon(Icons.home), label: 'Home'),
-          NavigationDestination(icon: Icon(Icons.edit_document), label: 'History'),
-          NavigationDestination(icon: Icon(Icons.near_me), label: 'Near By'),
-          NavigationDestination(icon: Icon(Icons.person_pin_outlined), label: 'User'),
+          NavigationDestination(icon: Image.asset('assets/images/home.png'), label: 'Home'),
+          NavigationDestination(icon: Image.asset('assets/images/history.png'), label: 'History'),
+          NavigationDestination(icon: Image.asset('assets/images/near.png'), label: 'Near By'),
+          NavigationDestination(icon: Image.asset('assets/images/user.png'), label: 'User'),
         ],
         selectedIndex: _selectedIndex,
         onDestinationSelected: (index) {
