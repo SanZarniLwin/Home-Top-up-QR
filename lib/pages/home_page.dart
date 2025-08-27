@@ -70,7 +70,7 @@ class _HomePageState extends State<HomePage> {
             Container(
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(15),
-                color: Colors.grey.shade200
+                color: Color.fromRGBO(242, 242, 242, 0.8),
               ),
               width: double.infinity,
               height: 130,
@@ -219,7 +219,7 @@ class _HomePageState extends State<HomePage> {
             Column(
               children: [
                 Container(
-                  color: Colors.grey.shade200,
+                  color: Color.fromRGBO(242, 242, 242, 0.3),
                   height: 65,
                   width: double.infinity,
                   child: Stack(
@@ -227,18 +227,24 @@ class _HomePageState extends State<HomePage> {
                       Positioned(
                         top: 10,
                         left: 10,
-                        child: Icon(
-                          Icons.arrow_downward,
-                        ),
+                        child: Container(
+                          height: 50,
+                          width: 50,
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(100),
+                            color: Color.fromRGBO(242, 242, 242, 1)
+                          ),
+                          child: Image.asset('assets/images/down.png')
+                        )
                       ),
                       Positioned(
                         top: 10,
-                        left: 50,
+                        left: 70,
                         child: Text('Business - fund In'),
                       ),
                       Positioned(
                         top: 35,
-                        left: 50,
+                        left: 70,
                         child: Text('3 February 2022'),
                       ),
                       Positioned(
@@ -251,7 +257,7 @@ class _HomePageState extends State<HomePage> {
                 ),
                 SizedBox(height: 15,),
                 Container(
-                  color: Colors.grey.shade200,
+                  color: Color.fromRGBO(242, 242, 242, 0.3),
                   height: 65,
                   width: double.infinity,
                   child: Stack(
@@ -259,18 +265,24 @@ class _HomePageState extends State<HomePage> {
                       Positioned(
                         top: 10,
                         left: 10,
-                        child: Icon(
-                          Icons.arrow_upward_rounded,
-                        ),
+                        child: Container(
+                          height: 50,
+                          width: 50,
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(100),
+                            color: Color.fromRGBO(242, 242, 242, 1)
+                          ),
+                          child: Image.asset('assets/images/up.png')
+                        )
                       ),
                       Positioned(
                         top: 10,
-                        left: 50,
+                        left: 70,
                         child: Text('Business - fund Out'),
                       ),
                       Positioned(
                         top: 35,
-                        left: 50,
+                        left: 70,
                         child: Text('12 July 2022'),
                       ),
                       Positioned(
