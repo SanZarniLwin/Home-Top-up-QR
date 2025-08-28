@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:home_page/pages/fund_in_page.dart';
 import 'package:home_page/pages/fund_out_page.dart';
+import 'package:home_page/pages/profile_page.dart';
 import 'package:home_page/pages/qr_page.dart';
 
 class FundInOutPage extends StatefulWidget {
@@ -162,7 +163,119 @@ class _FundInOutPageState extends State<FundInOutPage> {
                       ),
                     ],
                   ),
-                  SizedBox(height: 240,)
+                  SizedBox(height: 240,),
+                  FilledButton(
+                    style: ElevatedButton.styleFrom(
+                      backgroundColor: Color.fromRGBO(102, 103, 170, 1)
+                    ),
+                    onPressed: () {
+                      showDialog(
+                        context: context, 
+                        builder: (context) {
+                          return AlertDialog(
+                            backgroundColor: Colors.white,
+                          actions: [
+                            Container(
+                              padding: EdgeInsets.fromLTRB(10, 10, 10, 20),
+                              alignment: Alignment.center,
+                              color: Colors.white,
+                              child: Column(
+                                children: [
+                                   Row(
+                                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                    children: [
+                                      SizedBox(width: 20,),
+                                      IconButton(
+                                        onPressed: () {
+                                          Navigator.pushReplacement(
+                                            context, MaterialPageRoute(
+                                              builder: (context) {
+                                                return FundInOutPage();
+                                              },
+                                            )
+                                          );
+                                        }, 
+                                        icon: Image.asset('assets/images/x.png')
+                                      )
+                                    ],
+                                  ),
+                                  SizedBox(height: 8,),
+                                  Container(
+                                    height: 40,
+                                    width: 40,
+                                    decoration: BoxDecoration(
+                                      borderRadius: BorderRadius.circular(100),
+                                      color: Color.fromRGBO(102, 103, 170, 1)
+                                    ),
+                                    child: Image.asset('assets/images/alert.png')
+                                  ),
+                                  SizedBox(height: 20,),
+                                  Text(
+                                    'Alerts!',
+                                    style: TextStyle(
+                                      fontSize: 24,
+                                      fontWeight: FontWeight.w300,
+                                      color: Colors.black,
+                                      fontStyle: FontStyle.normal,
+                                    ),
+                                  ),
+                                  SizedBox(height: 20,),
+                                  Text(
+                                    'Please Contact to Mo Office',
+                                    style: TextStyle(
+                                      fontSize: 22,
+                                      fontWeight: FontWeight.w300,
+                                      color: Color.fromRGBO(96, 96, 96, 1),
+                                      fontStyle: FontStyle.normal,
+                                    ),
+                                  ),
+                                  SizedBox(height: 20,),
+                                  Row(
+                                    children: [
+                                      Expanded(
+                                        child: Container(
+                                          height: 50,
+                                          decoration: BoxDecoration(
+                                            borderRadius: BorderRadius.circular(15),
+                                            color: Color.fromRGBO(102, 103, 170, 1),
+                                          ),
+                                          child: FilledButton(
+                                            style: ElevatedButton.styleFrom(
+                                              backgroundColor: Color.fromRGBO(102, 103, 170, 1)
+                                            ),
+                                            onPressed: () {
+                                              Navigator.pushReplacement(
+                                                context, MaterialPageRoute(
+                                                  builder: (context) {
+                                                    return ProfilePage();
+                                                  },
+                                                )
+                                              );
+                                            }, 
+                                            child: Text(
+                                              'Contact Now',
+                                              style: TextStyle(
+                                                fontSize: 20,
+                                                fontWeight: FontWeight.w300,
+                                                color: Colors.white,
+                                                fontStyle: FontStyle.normal,
+                                              ),
+                                            )
+                                          ),
+                                        ),
+                                      ),
+                                    ],
+                                  )
+                                ],
+                              ),
+                            ),
+                          ],
+                        );
+                        },
+                      );
+                    }, 
+                    child: Text('Next'),
+                  )
                 ],
               ),
           )

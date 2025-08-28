@@ -17,7 +17,7 @@ class _FundInPageState extends State<FundInPage> {
           Container(
             alignment: Alignment.centerLeft,
             width: double.infinity,
-            padding: EdgeInsets.all(40),
+            padding: EdgeInsets.fromLTRB(40, 30, 40, 30),
             height: 220,
             decoration: BoxDecoration(
               image: DecorationImage(
