@@ -45,7 +45,7 @@ class _AboutPageState extends State<AboutPage> {
                       ),
                       SizedBox(height: 25,),
                       Text(
-                        'About (ks)',
+                        'About',
                         style: TextStyle(
                           fontSize: 28,
                           fontWeight: FontWeight.w400,
@@ -97,7 +97,7 @@ class _AboutPageState extends State<AboutPage> {
               ),
             ),
             Container(
-              padding: EdgeInsets.fromLTRB(20, 40, 20, 40),
+              padding: EdgeInsets.fromLTRB(20, 30, 20, 30),
               child: Column(
                 children: [
                   Container(
@@ -150,6 +150,10 @@ class _AboutPageState extends State<AboutPage> {
                               )
                             ],
                           ),
+                          Divider(
+                          color: Color.fromRGBO(238, 238, 238, 3),
+                          thickness: 2,
+                        ),
                         Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
@@ -172,6 +176,10 @@ class _AboutPageState extends State<AboutPage> {
                               ),
                             )
                           ],
+                        ),
+                        Divider(
+                          color: Color.fromRGBO(238, 238, 238, 3),
+                          thickness: 2,
                         ),
                         Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -196,8 +204,13 @@ class _AboutPageState extends State<AboutPage> {
                             )
                           ],
                         ),
+                        Divider(
+                          color: Color.fromRGBO(238, 238, 238, 3),
+                          thickness: 2,
+                        ),
                         Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
                             Text(
                               'Address',
@@ -236,7 +249,7 @@ class _AboutPageState extends State<AboutPage> {
                       ],
                     ),
                   ),
-                  SizedBox(height: 140,),
+                  SizedBox(height: 110,),
                   TextButton(
                     onPressed: () {
                       Navigator.pushReplacement(

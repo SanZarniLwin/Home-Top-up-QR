@@ -11,48 +11,38 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        backgroundColor: Colors.white,
-        title: SizedBox(
-          height: 50, // Give height to avoid layout error
-          child: Stack(
-            children: [
-              Container(
-                color: Colors.white,
-                height: 50,
-                width: double.infinity,
-              ),
-              Positioned(
-                top: 10,
-                left: 10,
-                child: Text('Welcome Pizza Co. Ltd'),
-              ),
-              Positioned(
-                top: 3,
-                right: 10,
-                child: Container(
-                  height: 40,
-                  width: 40,
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(100),
-                    color: Colors.grey.shade200
-                  ),
-                  child: Image.asset(
-                    'assets/images/noti.png',
-                    cacheHeight: 45,
-                    cacheWidth: 45,
-                  )
-                ),
-              ),
-            ],
-          ),
-        ),
-      ),
       body: Container(
+        padding: EdgeInsets.all(30),
         color: Colors.white,
-        padding: EdgeInsets.fromLTRB(30, 20, 30, 20),
         child: Column(
           children: [
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Text(
+                  'Welcome Pizza Co. Ltd',
+                  style: TextStyle(
+                    fontSize: 26,
+                    fontStyle: FontStyle.normal,
+                    fontWeight: FontWeight.w400,
+                    color: Colors.black,
+                  ),
+                ),
+                Container(
+                  height: 35,
+                  width: 35,
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(100),
+                    color: Color.fromRGBO(102, 103, 170, 0.1)
+                  ),
+                  child: IconButton(
+                    onPressed: () {}, 
+                    icon: Image.asset('assets/images/noti.png')
+                  ),
+                )
+              ],
+            ),
+            SizedBox(height: 15,),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
@@ -63,73 +53,67 @@ class _HomePageState extends State<HomePage> {
                     Text('1 USD : 2,100 MMK'),
                     Image.asset('assets/images/MM.png'),
                   ],
-                ),
-                
+                )
               ],
             ),
-            SizedBox(height: 5,),
+            SizedBox(height: 8,),
             Container(
+              padding: EdgeInsets.fromLTRB(30, 30, 30, 50),
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(15),
-                color: Color.fromRGBO(242, 242, 242, 0.8),
+                color: Color.fromRGBO(242, 242, 242, 0.8)
               ),
-              width: double.infinity,
-              height: 130,
-              child: Stack(
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Positioned(
-                    top: 25,
-                    left: 25,
-                    child: Text(
-                      '12,000.00',
-                      style: TextStyle(
-                        fontSize: 25,
-                        color: Colors.black,
+                  Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(
+                        '12,000.00',
+                        style: TextStyle(
+                          fontSize: 28,
+                          fontStyle: FontStyle.normal,
+                          fontWeight: FontWeight.w400,
+                          color: Colors.black,
+                        ),
                       ),
+                      SizedBox(height: 10,),
+                      Row(
+                        children: [
+                          Container(
+                            height: 25,
+                            width: 25,
+                            decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(100),
+                              color: Color.fromRGBO(102, 103, 170, 1)
+                            ),
+                            child: Image.asset('assets/images/wallet1.png'),
+                          ),
+                          SizedBox(width: 8,),
+                          Text(
+                            'My balance (Ks)',
+                            style: TextStyle(
+                              fontSize: 20,
+                              fontStyle: FontStyle.normal,
+                              fontWeight: FontWeight.w300,
+                              color: Color.fromRGBO(96, 96, 96, 1),
+                            ),
+                          )
+                        ],
                       )
+                    ],
                   ),
-                  Positioned(
-                    top: 65,
-                    left: 25,
-                    child: Container(
-                      height: 30,
-                      width: 30,
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(100),
-                        color: const Color.fromARGB(255, 102, 103, 170),
-                      ),
-                      child: Image.asset(
-                        'assets/images/wallet1.png',
-                        cacheHeight: 25,
-                        cacheWidth: 25,
-                      )
-                    )
-                  ),
-                  Positioned(
-                    top: 65,
-                    left: 60,
-                    child: Text(
-                      'My balance (Ks)',
-                      style: TextStyle(
-                        fontWeight: FontWeight.w400,
-                        fontSize: 16,
-                        color: const Color.fromARGB(96, 96, 96, 1),
-                      ),
-                    )
-                  ),
-                  Positioned(
-                    top: 25,
-                    right: 25,
-                    child: Container(
-                      height: 30,
-                      width: 30,
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(100),
-                        color: Colors.grey.shade400,
-                      ),
-                      child: Image.asset('assets/images/qr2.png')
-                    )
-                  ),
+                  Container(
+                    height: 30,
+                    width: 30,
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(100),
+                      color: Color.fromRGBO(217, 217, 217, 0.7)
+                    ),
+                    child: Image.asset('assets/images/qr2.png'),
+                  )
                 ],
               ),
             ),
@@ -140,162 +124,236 @@ class _HomePageState extends State<HomePage> {
               children: [
                 Column(
                   spacing: 10,
+                  crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Container(
-                      height: 52,
-                      width: 52,
+                      height: 50,
+                      width: 50,
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(100),
-                        color: const Color.fromARGB(255, 102, 103, 170),
+                        color: Color.fromRGBO(102, 103, 170, 1),
                       ),
-                      child: Image.asset('assets/images/transfer1.png')
+                      child: Image.asset('assets/images/transfer1.png'),
                     ),
-                    Text('Transfer')
+                    Text(
+                      'Transfer',
+                      style: TextStyle(
+                        fontSize: 18,
+                        fontStyle: FontStyle.normal,
+                        fontWeight: FontWeight.w300,
+                        color: Color.fromRGBO(96, 96, 96, 1),
+                      ),
+                    )
                   ],
                 ),
                 Column(
                   spacing: 10,
+                  crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Container(
-                      height: 52,
-                      width: 52,
+                      height: 50,
+                      width: 50,
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(100),
-                        color: const Color.fromARGB(255, 102, 103, 170),
+                        color: Color.fromRGBO(102, 103, 170, 1),
                       ),
-                      child: Image.asset('assets/images/interBank.png')
+                      child: Image.asset('assets/images/interbank.png'),
                     ),
-                    Text('Interbank\nTransfer')
+                    Text(
+                      'Interbank\nTransfer',
+                      style: TextStyle(
+                        fontSize: 18,
+                        fontStyle: FontStyle.normal,
+                        fontWeight: FontWeight.w300,
+                        color: Color.fromRGBO(96, 96, 96, 1),
+                      ),
+                    )
                   ],
                 ),
                 Column(
                   spacing: 10,
+                  crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Container(
-                      height: 52,
-                      width: 52,
+                      height: 50,
+                      width: 50,
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(100),
-                        color: const Color.fromARGB(255, 102, 103, 170),
+                        color: Color.fromRGBO(102, 103, 170, 1),
                       ),
-                      child: Image.asset('assets/images/fund1.png')
+                      child: Image.asset('assets/images/fund1.png'),
                     ),
-                    Text('Fund In/\nOut')
+                    Text(
+                      'Fund In/\nOut',
+                      style: TextStyle(
+                        fontSize: 18,
+                        fontStyle: FontStyle.normal,
+                        fontWeight: FontWeight.w300,
+                        color: Color.fromRGBO(96, 96, 96, 1),
+                      ),
+                    )
                   ],
                 ),
                 Column(
                   spacing: 10,
+                  crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Container(
-                      height: 52,
-                      width: 52,
+                      height: 50,
+                      width: 50,
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(100),
-                        color: const Color.fromARGB(255, 102, 103, 170),
+                        color: Color.fromRGBO(102, 103, 170, 1),
                       ),
-                      child: Image.asset('assets/images/more.png')
+                      child: Image.asset('assets/images/more.png'),
                     ),
-                    Text('More')
+                    Text(
+                      'More',
+                      style: TextStyle(
+                        fontSize: 18,
+                        fontStyle: FontStyle.normal,
+                        fontWeight: FontWeight.w300,
+                        color: Color.fromRGBO(96, 96, 96, 1),
+                      ),
+                    )
                   ],
                 ),
               ],
             ),
-            SizedBox(height: 20,),
+            SizedBox(height: 25,),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                Text('Recent Transcation'),
-                TextButton(
-                  onPressed: () {}, 
-                  child: Text(
-                    'See more',
-                    style: TextStyle(
-                      color: Colors.deepPurpleAccent,
+                Text(
+                  'Recent Transcation',
+                  style: TextStyle(
+                      fontSize: 22,
+                      fontStyle: FontStyle.normal,
+                      fontWeight: FontWeight.w300,
+                      color: Color.fromRGBO(6, 6, 6, 1),
                     ),
-                  )
+                ),
+                Text(
+                  'See more',
+                  style: TextStyle(
+                    fontSize: 20,
+                    fontStyle: FontStyle.normal,
+                    fontWeight: FontWeight.w500,
+                    color: Color.fromRGBO(102, 103, 170, 1),
+                  ),
                 )
               ],
             ),
-            SizedBox(height: 15,),
-            Column(
-              children: [
-                Container(
-                  color: Color.fromRGBO(242, 242, 242, 0.3),
-                  height: 65,
-                  width: double.infinity,
-                  child: Stack(
+            SizedBox(height: 25,),
+            Container(
+              padding: EdgeInsets.all(15),
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(15),
+                color: Color.fromRGBO(242, 242, 242, 0.3),
+              ),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Container(
+                    height: 50,
+                    width: 50,
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(100),
+                      color: Color.fromRGBO(242, 242, 242, 1)
+                    ),
+                    child: Image.asset('assets/images/down.png'),
+                  ),
+                  Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      Positioned(
-                        top: 10,
-                        left: 10,
-                        child: Container(
-                          height: 50,
-                          width: 50,
-                          decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(100),
-                            color: Color.fromRGBO(242, 242, 242, 1)
-                          ),
-                          child: Image.asset('assets/images/down.png')
-                        )
+                      Text(
+                        'Business - fund In',
+                        style: TextStyle(
+                          fontSize: 22,
+                          fontStyle: FontStyle.normal,
+                          fontWeight: FontWeight.w300,
+                          color: Color.fromRGBO(6, 6, 6, 1),
+                        ),
                       ),
-                      Positioned(
-                        top: 10,
-                        left: 70,
-                        child: Text('Business - fund In'),
-                      ),
-                      Positioned(
-                        top: 35,
-                        left: 70,
-                        child: Text('3 February 2022'),
-                      ),
-                      Positioned(
-                        top: 10,
-                        right: 10,
-                        child: Text('+2,000'),
-                      ),
+                      Text(
+                        '3 February 2022',
+                        style: TextStyle(
+                          fontSize: 22,
+                          fontStyle: FontStyle.normal,
+                          fontWeight: FontWeight.w300,
+                          color: Color.fromRGBO(159, 159, 159, 1),
+                        ),
+                      )
                     ],
                   ),
-                ),
-                SizedBox(height: 15,),
-                Container(
-                  color: Color.fromRGBO(242, 242, 242, 0.3),
-                  height: 65,
-                  width: double.infinity,
-                  child: Stack(
+                  SizedBox(width: 80,),
+                  Text(
+                    '+2,000',
+                    style: TextStyle(
+                      fontSize: 20,
+                      fontStyle: FontStyle.normal,
+                      fontWeight: FontWeight.w300,
+                      color: Color.fromRGBO(0, 0, 0, 1),
+                    ),
+                  )
+                ],
+              ),
+            ),
+            SizedBox(height: 10,),
+            Container(
+              padding: EdgeInsets.all(15),
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(15),
+                color: Color.fromRGBO(242, 242, 242, 0.3),
+              ),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Container(
+                    height: 50,
+                    width: 50,
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(100),
+                      color: Color.fromRGBO(242, 242, 242, 1)
+                    ),
+                    child: Image.asset('assets/images/up.png'),
+                  ),
+                  Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      Positioned(
-                        top: 10,
-                        left: 10,
-                        child: Container(
-                          height: 50,
-                          width: 50,
-                          decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(100),
-                            color: Color.fromRGBO(242, 242, 242, 1)
-                          ),
-                          child: Image.asset('assets/images/up.png')
-                        )
+                      Text(
+                        'Business - fund Out',
+                        style: TextStyle(
+                          fontSize: 22,
+                          fontStyle: FontStyle.normal,
+                          fontWeight: FontWeight.w300,
+                          color: Color.fromRGBO(6, 6, 6, 1),
+                        ),
                       ),
-                      Positioned(
-                        top: 10,
-                        left: 70,
-                        child: Text('Business - fund Out'),
-                      ),
-                      Positioned(
-                        top: 35,
-                        left: 70,
-                        child: Text('12 July 2022'),
-                      ),
-                      Positioned(
-                        top: 10,
-                        right: 10,
-                        child: Text('-5,000'),
-                      ),
+                      Text(
+                        '12 July 2022',
+                        style: TextStyle(
+                          fontSize: 22,
+                          fontStyle: FontStyle.normal,
+                          fontWeight: FontWeight.w300,
+                          color: Color.fromRGBO(159, 159, 159, 1),
+                        ),
+                      )
                     ],
                   ),
-                ),
-              ],
-            )
+                  SizedBox(width: 80,),
+                  Text(
+                    '-5,000',
+                    style: TextStyle(
+                      fontSize: 20,
+                      fontStyle: FontStyle.normal,
+                      fontWeight: FontWeight.w300,
+                      color: Color.fromRGBO(0, 0, 0, 1),
+                    ),
+                  )
+                ],
+              ),
+            ),
           ],
         ),
       ),

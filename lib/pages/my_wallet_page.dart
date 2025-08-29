@@ -107,11 +107,17 @@ class _MyWalletPageState extends State<MyWalletPage> {
                     ),
                   ),
                   SizedBox(height: 20,),
-                  Container(
-                    child: SingleChildScrollView(
+                  SizedBox(
+                     width: MediaQuery.of(context).size.width,                    child: SingleChildScrollView(
                       scrollDirection: Axis.horizontal,
+          physics: AlwaysScrollableScrollPhysics(),
                       child: Row(
+                        mainAxisSize: MainAxisSize.max,
                         children: [
+                          Image.asset('assets/images/sim.png'),
+                          SizedBox(width: 20,),
+                          Image.asset('assets/images/sim.png'),
+                          SizedBox(width: 20,),
                           Image.asset('assets/images/sim.png'),
                           SizedBox(width: 20,),
                           Image.asset('assets/images/sim.png'),
